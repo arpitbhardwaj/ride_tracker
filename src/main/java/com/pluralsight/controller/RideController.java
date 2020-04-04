@@ -40,4 +40,16 @@ public class RideController {
 		return rideService.updateRide(ride);
 	}
 	
+	@RequestMapping(value = "/batch", method = RequestMethod.GET)
+	public @ResponseBody Object batch() {
+		rideService.batch();
+		return null;
+	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	public @ResponseBody Object deleteRide(@PathVariable(value = "id") int id) {
+		rideService.deleteRide(id);
+		return null;
+	}
+	
 }
